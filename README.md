@@ -21,8 +21,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 import Ng6OktaAuthLibModule in your app module
 
-```import { Ng6OktaAuthLibModule } from 'ng6-okta-auth-lib';
-@NgModule({
+```import { Ng6OktaAuthLibModule } from 'ng6-okta-auth-lib';```
+```@NgModule({
   declarations: [
     AppComponent,
     HomeComponent
@@ -31,19 +31,20 @@ import Ng6OktaAuthLibModule in your app module
     BrowserModule,
        Ng6OktaAuthLibModule.forRoot({
         tokenManager : {
-          storage  : "localStorage"
+          storage  : 'localStorage'
         },
-        clientId   : "{oktaClientID}",
-        redirectUri: "{RedirectURI}",
-        issuer     : "{issureURL}",
-        url        : "{UserURL}",
-        scope      : "openid email"
+        clientId   : '{oktaClientID}',
+        redirectUri: '{RedirectURI}',
+        issuer     : '{issureURL}',
+        url        : '{UserURL}',
+        scope      : 'openid email'
     }),
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
-})```
+}) 
+```
 
 import and Add callback component on routing
 
