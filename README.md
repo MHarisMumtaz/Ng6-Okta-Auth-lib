@@ -3,8 +3,8 @@
  Okta integeration with angular 6
 
 # Exposed Api's/Services
- ``` Ng6OktaAuthService ```
- ``` Ng6OktaTokenService```
+ ```Ng6OktaAuthService```
+ ```Ng6OktaTokenService```
 
 # Git Repository
  https://github.com/MHarisMumtaz/Ng6-Okta-Auth-lib
@@ -43,7 +43,7 @@ import Ng6OktaAuthLibModule in your app module
   ],
   providers: [],
   bootstrap: [AppComponent]
-}) ```
+})```
 
 import and Add callback component on routing
 
