@@ -9,6 +9,9 @@
 # Git Repository
  https://github.com/MHarisMumtaz/Ng6-Okta-Auth-lib
 
+# npm Package
+ https://www.npmjs.com/package/ngx-okta-auth-lib
+ 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
 
 ## Development server
@@ -24,9 +27,9 @@ npm install ngx-okta-auth-lib
 
 #USAGE
 
-import Ng6OktaAuthLibModule in your app module
+import NgxOktaAuthLibModule in your app module
 
-```import { Ng6OktaAuthLibModule } from 'ng6-okta-auth-lib';```
+```import { NgxOktaAuthLibModule } from 'ngx-okta-auth-lib';```
 ```@NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,7 @@ import Ng6OktaAuthLibModule in your app module
   ],
   imports: [
     BrowserModule,
-       Ng6OktaAuthLibModule.forRoot({
+       NgxOktaAuthLibModule.forRoot({
         tokenManager : {
           storage  : 'localStorage'
         },
@@ -53,18 +56,18 @@ import Ng6OktaAuthLibModule in your app module
 
 import and Add callback component on routing
 
-```import { Ng6OktaCallbackComponent } from 'ng6-okta-auth-lib';
+```import { NgxOktaCallbackComponent } from 'ngx-okta-auth-lib';
 const appRoutes: Routes = [
-  { path: 'implicit/callback', component: Ng6OktaCallbackComponent}
+  { path: 'implicit/callback', component: NgxOktaCallbackComponent}
 ]
 ```
 
 Add oktaAuthGuard on your components
 
-```import { Ng6OktaAuthGuard } from 'ng6-okta-auth-lib';
+```import { NgxOktaAuthGuard } from 'ngx-okta-auth-lib';
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'implicit/callback', component: Ng6OktaCallbackComponent},
-  { path: 'home', component: HomeComponent, canActivate: [ Ng6OktaAuthGuard ] }
+  { path: 'implicit/callback', component: NgxOktaCallbackComponent},
+  { path: 'home', component: HomeComponent, canActivate: [ NgxOktaAuthGuard ] }
 ]
 ```
