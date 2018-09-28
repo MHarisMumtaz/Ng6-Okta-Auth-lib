@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'enl-ng6-okta-auth-lib',
+  selector: 'enl-ngx-okta-auth-lib',
   template: `
     <p>
-      ng6-okta-auth-lib works!
+      ngx-okta-auth-lib works!
     </p>
   `,
   styles: []
 })
-export class Ng6OktaAuthLibComponent implements OnInit {
+export class NgxOktaAuthLibComponent implements OnInit {
 
   constructor() { }
 

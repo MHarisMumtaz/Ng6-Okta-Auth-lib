@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Ng6OktaAuthService,Ng6OktaTokenService } from 'ng6-okta-auth-lib';
+import { NgxOktaAuthService,NgxOktaTokenService } from 'ngx-okta-auth-lib';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,7 +8,7 @@ import { Ng6OktaAuthService,Ng6OktaTokenService } from 'ng6-okta-auth-lib';
 export class AppComponent {
   title = 'app';
   
-  constructor(private oktaService:Ng6OktaAuthService,private tokenService:Ng6OktaTokenService){
+  constructor(private oktaService:NgxOktaAuthService,private tokenService:NgxOktaTokenService){
   	 console.log(this.tokenService.hasToken());
   }
 }

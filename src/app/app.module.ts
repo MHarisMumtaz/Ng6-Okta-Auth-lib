@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import { Ng6OktaAuthLibModule,Ng6OktaAuthGuard,Ng6OktaCallbackComponent } from 'ng6-okta-auth-lib';
+import { NgxOktaAuthLibModule,NgxOktaAuthGuard,NgxOktaCallbackComponent } from 'ngx-okta-auth-lib';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent, canActivate: [ Ng6OktaAuthGuard ] },
-  { path: 'implicit/callback', component: Ng6OktaCallbackComponent}
+  { path: 'home', component: HomeComponent, canActivate: [ NgxOktaAuthGuard ] },
+  { path: 'implicit/callback', component: NgxOktaCallbackComponent}
 ]
 
 @NgModule({
@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-       Ng6OktaAuthLibModule.forRoot({
+       NgxOktaAuthLibModule.forRoot({
         tokenManager : {
           storage  : "localStorage"
         },

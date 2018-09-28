@@ -17,11 +17,11 @@
       "dom"
     ],
     "paths": {
-      "ng6-okta-auth-lib": [
-        "dist/ng6-okta-auth-lib"
+      "ngx-okta-auth-lib": [
+        "dist/ngx-okta-auth-lib"
       ],
       "ng6-okta-auth-lib/*": [
-        "dist/ng6-okta-auth-lib/*"
+        "dist/ngx-okta-auth-lib/*"
       ]
     }
   }

@@ -1,4 +1,13 @@
 # Ng6OktaAuthLibApp
+ version 0.0.1
+ Okta integeration with angular 6
+
+# Exposed Api's/Services
+ `` Ng6OktaAuthService``
+ `` Ng6OktaTokenService``
+
+# Git Repository
+ https://github.com/MHarisMumtaz/Ng6-Okta-Auth-lib
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
 
@@ -6,22 +15,53 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# INSTALLATION
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`npm install @okta/okta-auth-js`
 
-## Build
+import Ng6OktaAuthLibModule in your app module
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+`import { Ng6OktaAuthLibModule } from 'ng6-okta-auth-lib';
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomeComponent
+  ],
+  imports: [
+    BrowserModule,
+       Ng6OktaAuthLibModule.forRoot({
+        tokenManager : {
+          storage  : "localStorage"
+        },
+        clientId   : "{oktaClientID}",
+        redirectUri: "{RedirectURI}",
+        issuer     : "{issureURL}",
+        url        : "{UserURL}",
+        scope      : "openid email"
+    }),
+    RouterModule.forRoot(appRoutes)
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+`
 
-## Running unit tests
+import and Add callback component on routing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`
+import { Ng6OktaCallbackComponent } from 'ng6-okta-auth-lib';
+const appRoutes: Routes = [
+  { path: 'implicit/callback', component: Ng6OktaCallbackComponent}
+]
+`
 
-## Running end-to-end tests
+Add oktaAuthGuard on your components
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`
+import { Ng6OktaAuthGuard } from 'ng6-okta-auth-lib';
+const appRoutes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'implicit/callback', component: Ng6OktaCallbackComponent},
+  { path: 'home', component: HomeComponent, canActivate: [ Ng6OktaAuthGuard ] }
+]
+`

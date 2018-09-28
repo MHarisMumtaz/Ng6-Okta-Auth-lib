@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot,Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Ng6OktaAuthService } from './ng6-okta-auth.service';
-import { Ng6OktaTokenService } from './ng6-okta-token.service';
+import { NgxOktaAuthService } from './ngx-okta-auth.service';
+import { NgxOktaTokenService } from './ngx-okta-token.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class Ng6OktaAuthGuard implements CanActivate {
+export class NgxOktaAuthGuard implements CanActivate {
   
   private _oktaAuth;
   private _authenticated;
 
-  constructor(private okta: Ng6OktaAuthService,private oktaTokenService:Ng6OktaTokenService, private router: Router) {
+  constructor(private okta: NgxOktaAuthService,private oktaTokenService:NgxOktaTokenService, private router: Router) {
       this._authenticated = this.oktaTokenService.hasToken();
       this._oktaAuth = this.okta;
   }

@@ -5,7 +5,7 @@ import {OIDCConfig} from './oidcConfig';
 @Injectable({
   providedIn: 'root'
 })
-export class Ng6OktaAuthService {
+export class NgxOktaAuthService {
 
   private _oidc : OIDCConfig;
   private _oktaAuth;

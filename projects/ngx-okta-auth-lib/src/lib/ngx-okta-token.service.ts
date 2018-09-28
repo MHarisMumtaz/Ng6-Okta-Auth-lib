@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class Ng6OktaTokenService {
+export class NgxOktaTokenService {
 
   public getClaims(){
     return this.getLocalTokenObject().idToken.claims;
