@@ -1,6 +1,6 @@
 {
   "name": "ngx-okta-auth-lib",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "This is an okta Angular integeration Library to use with angular 6 and latest version. the token and auth api's/services are exposed in it to be use in any angular project with okta",
   "keywords" :["Angular","oktaLibrary","ng6Okta","oktaAngular","ng-okta-auth"],
   "license" : "SEE LICENSE IN LICENSE",
