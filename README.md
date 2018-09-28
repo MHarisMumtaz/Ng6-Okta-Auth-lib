@@ -3,8 +3,8 @@
  Okta integeration with angular 6
 
 # Exposed Api's/Services
- `` Ng6OktaAuthService``
- `` Ng6OktaTokenService``
+ ``` Ng6OktaAuthService ```
+ ``` Ng6OktaTokenService```
 
 # Git Repository
  https://github.com/MHarisMumtaz/Ng6-Okta-Auth-lib
@@ -21,7 +21,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 import Ng6OktaAuthLibModule in your app module
 
-`import { Ng6OktaAuthLibModule } from 'ng6-okta-auth-lib';
+```import { Ng6OktaAuthLibModule } from 'ng6-okta-auth-lib';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,25 +43,22 @@ import Ng6OktaAuthLibModule in your app module
   ],
   providers: [],
   bootstrap: [AppComponent]
-})
-`
+}) ```
 
 import and Add callback component on routing
 
-`
-import { Ng6OktaCallbackComponent } from 'ng6-okta-auth-lib';
+```import { Ng6OktaCallbackComponent } from 'ng6-okta-auth-lib';
 const appRoutes: Routes = [
   { path: 'implicit/callback', component: Ng6OktaCallbackComponent}
 ]
-`
+```
 
 Add oktaAuthGuard on your components
 
-`
-import { Ng6OktaAuthGuard } from 'ng6-okta-auth-lib';
+```import { Ng6OktaAuthGuard } from 'ng6-okta-auth-lib';
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'implicit/callback', component: Ng6OktaCallbackComponent},
   { path: 'home', component: HomeComponent, canActivate: [ Ng6OktaAuthGuard ] }
 ]
-`
+```
